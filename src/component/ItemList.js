@@ -1,5 +1,5 @@
-import {Grid} from "semantic-ui-react";
-import styles from './ItemList.module.css';
+import { Grid } from "semantic-ui-react";
+import styles from "./ItemList.module.css";
 import Link from "next/link";
 
 export default function ItemList({ list }) {
@@ -9,16 +9,17 @@ export default function ItemList({ list }) {
                 <Grid.Row>
                     {list.map((item) => (
                         <Grid.Column key={item.id}>
-                            <Link href={"/detail/[id]"} as={`/detail/${item.id}`}>
+                            <Link href="/detail/[id]" as={`/detail/${item.id}`}>
                                 <a>
                                     <div className={styles.wrap}>
                                         <img
                                             src={item.image_link}
                                             alt={item.name}
-                                            className={styles.img_item}/>
+                                            className={styles.img_item}
+                                        />
                                         <strong className={styles.tit_item}>{item.name}</strong>
-                                        <span className={styles.txt_info}>
-                                            {item.category} {item.product_type}
+                                        <span className={styles.txt_info}>{item.category}
+                                            {item.product_type}
                                         </span>
                                         <strong className={styles.num_price}>${item.price}</strong>
                                     </div>
